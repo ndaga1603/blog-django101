@@ -12,6 +12,13 @@
   </head>
   <body>
     <div class="container mt-4">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand btn btn-primary" href="{% url "create_post" %}"> Create Post
+          </a>
+        </div>
+      </nav>
+
         {% for object in object_list %}
             <div class="card mx-2 my-2" style="width: 24rem;">
                 <img src="{{ object.image.url }}" class="card-img-top" alt="post-image">
@@ -21,7 +28,6 @@
                     <a href="#" class="btn btn-secondary">Comment</a>
                 </div>
             </div>
-            {{ users }}
         {% endfor %}
     </div>
 
