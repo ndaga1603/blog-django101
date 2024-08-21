@@ -18,9 +18,11 @@
           </a>
         </div>
       </nav>
+      <div class="row">
 
         {% for object in object_list %}
-            <div class="card mx-2 my-2" style="width: 24rem;">
+          <div class="col-md-4">
+            <div class="card mx-2 my-2 px-4" style="width: 24rem;">
                 <img src="{{ object.image.url }}" class="card-img-top" alt="post-image">
                 <div class="card-body">
                     <h5 class="card-title">{{ object.author.first_name }} {{ object.author.last_name }} - {{ object.created_at }}</h5>
@@ -28,7 +30,10 @@
                     <a href="#" class="btn btn-secondary">Comment</a>
                 </div>
             </div>
+          </div>
         {% endfor %}
+      </div>
+
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
