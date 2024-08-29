@@ -20,5 +20,15 @@ class Feed(models.Model):
         return f"{self.author.username} {self.created_at}"
 
 
+
+class Comment(models.Model):
+    feed = models.ForeignKey(Feed, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f"{self.author.username} {self.created_at}"
+    
 # python manage.py makemigrations
 # python manage.py migrate
